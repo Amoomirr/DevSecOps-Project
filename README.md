@@ -481,6 +481,6 @@ Destroy the resources in one go using Terraform
  ```bash
 terraform destroy -auto-approve 
 ```
-👩‍💻 Author
+👩‍💻 Author: 
 Mohammed Amir
 
