@@ -29,7 +29,8 @@ This project demonstrates:
 - VPC
 - EKS cluster
 
-![Terraform-Infra](https://github.com/user-attachments/assets/02254cca-fa55-4cd3-91c1-f323689604dd)
+![Terraform-Infra](https://github.com/user-attachments/assets/c98449b8-6ebc-43a4-ba50-a3a15df32dff)
+
 
 📦 Initialize Terraform
 ```bash
@@ -38,8 +39,6 @@ terraform validate
 terraform plan
 terraform apply
 ```
-![Ec2-Dashboard](https://github.com/user-attachments/assets/7786268b-5051-45f9-b6b8-b6f93be9a490)
-
 
 **Step 2: Clone the Code:**
 
@@ -76,6 +75,8 @@ terraform apply
 
 It will show error cause you need a API key
 
+![without-api](https://github.com/user-attachments/assets/732b1279-1574-470a-8cab-580e40899c40)
+
 **Step 4: Get the API Key:**
 
 - Open a web browser and navigate to TMDB (The Movie Database) website.
@@ -90,7 +91,7 @@ Now recreate the Docker image with your API key:
 ```
 docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
 ```
-![with-api](https://github.com/user-attachments/assets/c878cd44-43d3-414c-a790-ed5a36cd6229)
+![with-api](https://github.com/user-attachments/assets/2809e51d-db34-4d4e-bbcd-d17ee5e75361)
 
 ### **Phase 2:   Security Implementation (SonarQube & Trivy)**
 
@@ -107,7 +108,8 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
     - Integrate SonarQube with your CI/CD pipeline.
     - Configure SonarQube to analyze code for quality and security issues.
 
-![sonarqube-jenkins](https://github.com/user-attachments/assets/5c4b8990-e8bb-44c3-b2fb-a7e56bd97f0f)
+![sonarqube-jenkins](https://github.com/user-attachments/assets/93bd83c8-54fd-460b-a6b1-3ddbbe6af742)
+
    
   Step 3: 🔍 Trivy (Container Image Scanning)
       
@@ -123,8 +125,7 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
          ```bash
         trivy image <imageid>
         ```
- 
-![trivy-scan](https://github.com/user-attachments/assets/07083803-17c6-475c-acaa-a438f0fed8d9)
+ ![trivy-scan](https://github.com/user-attachments/assets/df7bc04d-482e-4353-a4f6-110118c83854)
 
 
 ### **Phase 3: CI/CD Setup (Jenkins + GitHub)**
@@ -174,7 +175,8 @@ Install below plugins
 
 **Create a Jenkins webhook**
 
-![github-webhook](https://github.com/user-attachments/assets/7322a7b9-7994-4293-a001-2d395fdfddda)
+![github-webhook](https://github.com/user-attachments/assets/c14795ec-0364-4e6e-ad62-5c2aa7d2f28c)
+
 
 **Configure CI/CD Pipeline in Jenkins:**
 
@@ -299,7 +301,8 @@ pipeline{
 
 ```
 
-<img width="1339" height="643" alt="jenkins-dashboard" src="https://github.com/user-attachments/assets/9b0d34f2-d37d-4288-8990-32be13d0c6e9" />
+<img width="1339" height="643" alt="jenkins-dashboard" src="https://github.com/user-attachments/assets/8aa72238-8d9c-4446-b9bd-be42a1a4e5ef" />
+
 
 ### **Phase 4: GitOps Deployment (ArgoCD & Kubernetes)** 
 
@@ -427,7 +430,8 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 > 5. Click on “Create”.
 
-<img width="1233" height="687" alt="argocd" src="https://github.com/user-attachments/assets/10a7096e-b314-4442-abc4-ec910a415182" />
+<img width="1233" height="687" alt="argocd" src="https://github.com/user-attachments/assets/e71f14b0-224d-4b2d-bfcc-f434e6a5ba38" />
+
 
 ### **Phase 5: Monitoring (Prometheus & Grafana)**
 
@@ -473,7 +477,8 @@ To make it easier to view metrics, you can import a pre-configured dashboard. Fo
 - Select the data source you added (Prometheus) from the dropdown.
 - Click on the "Import" button.
 
-<img width="1281" height="712" alt="grafana" src="https://github.com/user-attachments/assets/ca0a45fe-39a9-445c-930f-f08e5c165f79" />
+<img width="1281" height="712" alt="grafana" src="https://github.com/user-attachments/assets/18103d66-b3a7-43f4-9601-bfbf73e9563a" />
+
 
 ### **Phase 6: Cleanup Infrastructure**
 
